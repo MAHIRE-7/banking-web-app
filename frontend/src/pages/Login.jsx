@@ -11,15 +11,18 @@ export default function Login() {
     e.preventDefault();
     try {
       const { data } = isLogin ? await login(formData) : await register(formData);
+      console.log('Login response:', data);
       if (isLogin) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('role', data.role);
+        console.log('Navigating to:', `/${data.role === 'superadmin' ? 'superadmin' : data.role}`);
         navigate(`/${data.role === 'superadmin' ? 'superadmin' : data.role}`);
       } else {
         alert('Registration successful! Please login.');
         setIsLogin(true);
       }
     } catch (error) {
+      console.error('Login error:', error);
       alert(error.response?.data?.error || 'Error occurred');
     }
   };
