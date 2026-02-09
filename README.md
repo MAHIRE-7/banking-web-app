@@ -30,12 +30,12 @@
 2. Create `.env` file (copy from `.env.example`):
    ```
    PORT=5000
-   JWT_SECRET=your_secret_key
-   MONGODB_URI=mongodb://localhost:27017/banking_db
-   MYSQL_HOST=localhost
-   MYSQL_USER=root
-   MYSQL_PASSWORD=your_password
-   MYSQL_DATABASE=user_management
+   JWT_SECRET=vdwAWjdRMUk2ouvhbiIY6cC4RPmkaxmYI7FWVkDLo6p
+   MONGODB_URI=mongodb://bank_user:bank123@localhost:27017/banking_db
+   MYSQL_HOST=10.0.143.2
+   MYSQL_USER=bank_user
+   MYSQL_PASSWORD=bank123
+   MYSQL_DATABASE=banking_db
    ```
 
 3. Start backend:
