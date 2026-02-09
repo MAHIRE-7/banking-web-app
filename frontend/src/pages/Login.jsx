@@ -16,7 +16,7 @@ export default function Login() {
         localStorage.setItem('token', data.token);
         localStorage.setItem('role', data.role);
         console.log('Navigating to:', `/${data.role === 'superadmin' ? 'superadmin' : data.role}`);
-        navigate(`/${data.role === 'superadmin' ? 'superadmin' : data.role}`);
+        navigate(`/${data.role === 'superadmin' ? 'superadmin' : data.role}`, { replace: true });
       } else {
         alert('Registration successful! Please login.');
         setIsLogin(true);
