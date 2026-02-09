@@ -25,7 +25,7 @@ const startServer = async () => {
   await connectMongoDB();
   await initMySQL();
   
-  app.listen(PORT, () => {
+  app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
   });
 };

@@ -31,12 +31,18 @@
    ```
    PORT=5000
    JWT_SECRET=vdwAWjdRMUk2ouvhbiIY6cC4RPmkaxmYI7FWVkDLo6p
-   MONGODB_URI=mongodb://bank_user:bank123@localhost:27017/banking_db
+   MONGODB_URI=mongodb://bank_user:bank123@10.0.143.2:27017/banking_db
    MYSQL_HOST=10.0.143.2
    MYSQL_USER=bank_user
    MYSQL_PASSWORD=bank123
    MYSQL_DATABASE=banking_db
    ```
+
+   CREATE USER 'banking_user'@'10.0.136.%' IDENTIFIED BY 'Banking@1234';
+GRANT ALL PRIVILEGES ON banking.* TO 'banking_user'@'10.0.136.%';
+FLUSH PRIVILEGES;
+
+mysql -h 10.0.143.2 -u banking_user -p
 
 3. Start backend:
    ```
